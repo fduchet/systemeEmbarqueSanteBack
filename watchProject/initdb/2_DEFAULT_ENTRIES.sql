@@ -1,0 +1,8 @@
+INSERT INTO defaultdb.users(id,first_name,last_name,age,email,password,telephone_number) VALUES (1, 'Pierre', 'Gerard',22, 'pierre.grd7@gmail.com', 'PierreGerard', '0623415212');
+INSERT INTO defaultdb.users(id,first_name,last_name,age,email,password,telephone_number) VALUES (2, 'Timothé', 'Nouaille', 22, 'timothee.nouaille@free.fr','TimotheNouaille', '0678965412');
+INSERT INTO defaultdb.users(id,first_name,last_name,age,email,password,telephone_number) VALUES (3, 'Bastien', 'Robert', 23, 'bastienrobert92@gmail.com','BastienRobert', '0678965412');
+INSERT INTO defaultdb.events(id,id_creator,month,year,day,hour,minutes,department,place,number_of_participant,type_of_sport,level) VALUES (1, 2, 'Juillet', 2019, 20, 14, 30, 92, 'Génelard',4, 'Football', 'Debutant' );
+INSERT INTO defaultdb.events(id,id_creator,month,year,day,hour,minutes,department,place,number_of_participant,type_of_sport,level) VALUES (2, 1, 'Fevrier', 2019, 21, 14, 30, 92, 'Sceaux',4, 'Tennis', 'Debutant' );
+INSERT INTO defaultdb.events(id,id_creator,month,year,day,hour,minutes,department,place,number_of_participant,type_of_sport,level) VALUES (3, 3, 'Septembre', 2019, 25, 17, 30, 92, 'Bourg La Reine',2, 'Football', 'Confirme' );
+INSERT INTO defaultdb.events(id,id_creator,month,year,day,hour,minutes,department,place,number_of_participant,type_of_sport,level) VALUES (4, 2, 'Octobre', 2019, 30, 16, 00, 75, 'Paris',15, 'Rugby', 'Intermediaire' );
+INSERT INTO defaultdb.events(id,id_creator,month,year,day,hour,minutes,department,place,number_of_participant,type_of_sport,level) VALUES (5, 3, 'Novembre', 2019, 03, 14, 00, 92, 'Antony',12, 'Handball', 'Expert' );

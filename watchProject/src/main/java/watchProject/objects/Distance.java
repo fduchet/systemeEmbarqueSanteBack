@@ -3,25 +3,26 @@ package watchProject.objects;
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity(name="calories")
-public class Calorie {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id
-    private long id;
-    @Column(name="time")
-    private String time;
-    @Column(name = "value")
-    private String value;
-    @Column(name="run_id")
-    private long run_id;
+@Entity(name="distances")
+public class Distance {
 
-    public Calorie(String time, String value, long run_id) {
+            @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Id
+        private long id;
+        @Column(name="time")
+        private String time;
+        @Column(name = "value")
+        private String value;
+        @Column(name="run_id")
+        private long run_id;
+
+    public Distance(String time, String value, long run_id) {
         this.time = time;
         this.value = value;
         this.run_id = run_id;
     }
 
-    public Calorie(){
+    public Distance(){
 
     }
 
@@ -59,7 +60,7 @@ public class Calorie {
 
     @Override
     public String toString() {
-        return "Calorie{" +
+        return "Distance{" +
                 "id=" + id +
                 ", time='" + time + '\'' +
                 ", value='" + value + '\'' +
@@ -71,11 +72,11 @@ public class Calorie {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Calorie calorie = (Calorie) o;
-        return id == calorie.id &&
-                run_id == calorie.run_id &&
-                Objects.equals(time, calorie.time) &&
-                Objects.equals(value, calorie.value);
+        Distance distance = (Distance) o;
+        return id == distance.id &&
+                run_id == distance.run_id &&
+                Objects.equals(time, distance.time) &&
+                Objects.equals(value, distance.value);
     }
 
     @Override

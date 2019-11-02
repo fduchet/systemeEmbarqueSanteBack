@@ -1,10 +1,8 @@
 package watchProject.controller;
 
 import org.springframework.web.bind.annotation.*;
-import watchProject.DAO.OxygenLevelsDAO;
-import watchProject.DAO.SpeedsDAO;
-import watchProject.DAO.UsersDAO;
-import watchProject.DAO.RunsDAO;
+import watchProject.DAO.*;
+import watchProject.objects.Distance;
 
 import java.net.ConnectException;
 
@@ -16,14 +14,16 @@ public class Controller {
     private final RunsDAO runsDAO;
     private final OxygenLevelsDAO oxygenLevelsDAO;
     private final SpeedsDAO speedsDAO;
-
+    private final CaloriesDAO caloriesDAO;
+    private final DistancesDAO distancesDAO;
     //initialisation des DAO
-    public Controller(UsersDAO usersDAO, RunsDAO runsDAO, OxygenLevelsDAO oxygenLevelsDAO, SpeedsDAO speedsDAO) {
+    public Controller(UsersDAO usersDAO, RunsDAO runsDAO, OxygenLevelsDAO oxygenLevelsDAO, SpeedsDAO speedsDAO, CaloriesDAO caloriesDAO, DistancesDAO distancesDAO) {
         this.usersDAO = usersDAO;
         this.runsDAO=runsDAO;
         this.oxygenLevelsDAO=oxygenLevelsDAO;
         this.speedsDAO=speedsDAO;
-
+        this.caloriesDAO=caloriesDAO;
+        this.distancesDAO=distancesDAO;
     }
 
     @RequestMapping("/")
@@ -46,6 +46,12 @@ public class Controller {
 
     @GetMapping(value="/speeds/ {id}")
     public String getSpeeds(@PathVariable long id){ return speedsDAO.findById(id).toString();}
+
+    @GetMapping(value="/calories/ {id}")
+    public String getCalories(@PathVariable long id){ return caloriesDAO.findById(id).toString();}
+
+    @GetMapping(value="/speeds/ {id}")
+    public String getDistances(@PathVariable long id){ return distancesDAO.findById(id).toString();}
 
 
 }

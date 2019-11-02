@@ -3,6 +3,8 @@ package watchProject.objects;
 import javax.persistence.*;
 import java.util.Objects;
 
+// OK FERDI
+
 @Entity(name="users")
 public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,97 +1,34 @@
-drop table users;
-drop table runs;
-drop table calories;
-drop table temperatures;
-drop table heart_rates;
-drop table oxygen_levels;
-drop table speeds;
-drop table distances;
-
 create table users
 (
-    id          bigint auto_increment
-        primary key,
-    first_name  text       null,
-    last_name   text       null,
-    weight        text       null,
-    height        text       null,
-    email_address        text       null,
-    age   text       null
-);
-
-create table runs
-(
-    id  bigint auto_increment
-        primary key,
-    total_distance       text       null,
-    total_time         text       null,
-    average_speed   text       null,
-    average_heart_rate text       null,
-    average_oxygen_level        int        null,
-    description text null,
-    user_id bigint,
-    constraint runs_user_fk foreign key(user_id) references users(id)
+    id bigint auto_increment,
+    constraint users_pk
+        primary key (id),
+    first_name TEXT not null,
+    last_name TEXT not null,
+    age int not null,
+    email TEXT not null,
+    password TEXT not null,
+    telephone_number TEXT not null
 
 );
 
-create table oxygen_levels
+create table events
 (
-    id   bigint auto_increment
-        primary key,
-    time text null ,
-    value text null ,
-    run_id bigint,
-    constraint oxygen_levels_run_fk foreign key(run_id) references runs(id)
-);
+    id bigint auto_increment,
+    constraint events_pk
+        primary key (id),
+    id_creator int not null,
+    month TEXT not null,
+    year int not null,
+    day int not null,
+    hour int not null,
+    minutes int not null,
+    department int not null,
+    place TEXT not null,
+    number_of_participant int not null,
+    type_of_sport TEXT not null,
+    level TEXT not null
 
-create table speeds
-(
-    id   bigint auto_increment
-        primary key,
-    time text null ,
-    value text null ,
-    run_id bigint,
-    constraint speeds_run_fk foreign key(run_id) references runs(id)
-);
-
-create table calories
-(
-    id   bigint auto_increment
-        primary key,
-    time text null ,
-    value text null ,
-    run_id bigint,
-    constraint calories_run_fk foreign key(run_id) references runs(id)
-);
-
-create table distances
-(
-    id   bigint auto_increment
-        primary key,
-    time text null ,
-    value text null ,
-    run_id bigint,
-    constraint distances_run_fk foreign key(run_id) references runs(id)
-);
-
-create table heart_rates
-(
-    id   bigint auto_increment
-        primary key,
-    time text null ,
-    value text null ,
-    run_id bigint,
-    constraint heart_rates_run_fk foreign key(run_id) references runs(id)
-);
-
-create table temperatures
-(
-    id   bigint auto_increment
-        primary key,
-    time text null ,
-    value text null ,
-    run_id bigint,
-    constraint temperatures_run_fk foreign key(run_id) references runs(id)
 );
 
 

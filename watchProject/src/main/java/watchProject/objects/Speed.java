@@ -11,13 +11,13 @@ public class Speed {
     @Id
     private long id;
     @Column(name="time")
-    private float time;
+    private String time;
     @Column(name="value")
-    private float value;
+    private String value;
     @Column(name="run_id")
     private long run_id;
 
-    public Speed(float time, float value, long run_id) {
+    public Speed(String time, String value, long run_id) {
         this.time = time;
         this.value = value;
         this.run_id = run_id;
@@ -35,19 +35,19 @@ public class Speed {
         this.id = id;
     }
 
-    public float getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(float time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public float getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(float value) {
+    public void setValue(String value) {
         this.value = value;
     }
 
@@ -63,8 +63,8 @@ public class Speed {
     public String toString() {
         return "Speed{" +
                 "id=" + id +
-                ", time=" + time +
-                ", value=" + value +
+                ", time='" + time + '\'' +
+                ", value='" + value + '\'' +
                 ", run_id=" + run_id +
                 '}';
     }
@@ -75,9 +75,9 @@ public class Speed {
         if (o == null || getClass() != o.getClass()) return false;
         Speed speed = (Speed) o;
         return id == speed.id &&
-                Float.compare(speed.time, time) == 0 &&
-                Float.compare(speed.value, value) == 0 &&
-                run_id == speed.run_id;
+                run_id == speed.run_id &&
+                Objects.equals(time, speed.time) &&
+                Objects.equals(value, speed.value);
     }
 
     @Override

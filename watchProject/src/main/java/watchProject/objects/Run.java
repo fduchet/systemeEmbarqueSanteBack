@@ -13,28 +13,28 @@ public class Run {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "total_distance")
-    private float total_distance;
+    private String total_distance;
     @Column(name = "total_time")
-    private float total_time;
+    private String total_time;
     @Column(name="average_speed")
-    private float average_speed;
+    private String average_speed;
     @Column(name="average_heart_rate")
-    private float average_heart_rate;
+    private String  average_heart_rate;
     @Column(name="average_oxygen_level")
-    private float average_oxygen_level;
+    private String  average_oxygen_level;
     @Column(name="description")
     private String description;
     @Column(name="user_id")
     private long user_id;
 
-    public Run(float total_distance, float total_time, float average_speed, float average_heart_rate, float average_oxygen_level, String description, long user_id){
-        this.total_distance=total_distance;
-        this.total_time=total_time;
-        this.average_speed=average_speed;
-        this.average_heart_rate=average_heart_rate;
-        this.average_oxygen_level=average_oxygen_level;
-        this.description=description;
-        this.user_id=user_id;
+    public Run(String total_distance, String total_time, String average_speed, String average_heart_rate, String average_oxygen_level, String description, long user_id) {
+        this.total_distance = total_distance;
+        this.total_time = total_time;
+        this.average_speed = average_speed;
+        this.average_heart_rate = average_heart_rate;
+        this.average_oxygen_level = average_oxygen_level;
+        this.description = description;
+        this.user_id = user_id;
     }
 
     public Run(){
@@ -49,43 +49,43 @@ public class Run {
         this.id = id;
     }
 
-    public float getTotal_distance() {
+    public String getTotal_distance() {
         return total_distance;
     }
 
-    public void setTotal_distance(float total_distance) {
+    public void setTotal_distance(String total_distance) {
         this.total_distance = total_distance;
     }
 
-    public float getTotal_time() {
+    public String getTotal_time() {
         return total_time;
     }
 
-    public void setTotal_time(float total_time) {
+    public void setTotal_time(String total_time) {
         this.total_time = total_time;
     }
 
-    public float getAverage_speed() {
+    public String getAverage_speed() {
         return average_speed;
     }
 
-    public void setAverage_speed(float average_speed) {
+    public void setAverage_speed(String average_speed) {
         this.average_speed = average_speed;
     }
 
-    public float getAverage_heart_rate() {
+    public String getAverage_heart_rate() {
         return average_heart_rate;
     }
 
-    public void setAverage_heart_rate(float average_heart_rate) {
+    public void setAverage_heart_rate(String average_heart_rate) {
         this.average_heart_rate = average_heart_rate;
     }
 
-    public float getAverage_oxygen_level() {
+    public String getAverage_oxygen_level() {
         return average_oxygen_level;
     }
 
-    public void setAverage_oxygen_level(float average_oxygen_level) {
+    public void setAverage_oxygen_level(String average_oxygen_level) {
         this.average_oxygen_level = average_oxygen_level;
     }
 
@@ -109,11 +109,11 @@ public class Run {
     public String toString() {
         return "Run{" +
                 "id=" + id +
-                ", total_distance=" + total_distance +
-                ", total_time=" + total_time +
-                ", average_speed=" + average_speed +
-                ", average_heart_rate=" + average_heart_rate +
-                ", average_oxygen_level=" + average_oxygen_level +
+                ", total_distance='" + total_distance + '\'' +
+                ", total_time='" + total_time + '\'' +
+                ", average_speed='" + average_speed + '\'' +
+                ", average_heart_rate='" + average_heart_rate + '\'' +
+                ", average_oxygen_level='" + average_oxygen_level + '\'' +
                 ", description='" + description + '\'' +
                 ", user_id=" + user_id +
                 '}';
@@ -125,12 +125,12 @@ public class Run {
         if (o == null || getClass() != o.getClass()) return false;
         Run run = (Run) o;
         return id == run.id &&
-                Float.compare(run.total_distance, total_distance) == 0 &&
-                Float.compare(run.total_time, total_time) == 0 &&
-                Float.compare(run.average_speed, average_speed) == 0 &&
-                Float.compare(run.average_heart_rate, average_heart_rate) == 0 &&
-                Float.compare(run.average_oxygen_level, average_oxygen_level) == 0 &&
                 user_id == run.user_id &&
+                Objects.equals(total_distance, run.total_distance) &&
+                Objects.equals(total_time, run.total_time) &&
+                Objects.equals(average_speed, run.average_speed) &&
+                Objects.equals(average_heart_rate, run.average_heart_rate) &&
+                Objects.equals(average_oxygen_level, run.average_oxygen_level) &&
                 Objects.equals(description, run.description);
     }
 

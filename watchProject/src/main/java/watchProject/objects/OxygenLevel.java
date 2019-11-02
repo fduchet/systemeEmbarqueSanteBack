@@ -9,13 +9,13 @@ public class OxygenLevel {
     @Id
     private long id;
     @Column(name="time")
-    private float time;
+    private String time;
     @Column(name="value")
-    private float value;
+    private String value;
     @Column(name="run_id")
     private long run_id;
 
-    public OxygenLevel(float time, float value, long run_id) {
+    public OxygenLevel(String time, String value, long run_id) {
         this.time = time;
         this.value = value;
         this.run_id = run_id;
@@ -33,19 +33,19 @@ public class OxygenLevel {
         this.id = id;
     }
 
-    public float getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(float time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public float getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(float value) {
+    public void setValue(String value) {
         this.value = value;
     }
 
@@ -61,8 +61,8 @@ public class OxygenLevel {
     public String toString() {
         return "OxygenLevel{" +
                 "id=" + id +
-                ", time=" + time +
-                ", value=" + value +
+                ", time='" + time + '\'' +
+                ", value='" + value + '\'' +
                 ", run_id=" + run_id +
                 '}';
     }
@@ -73,9 +73,9 @@ public class OxygenLevel {
         if (o == null || getClass() != o.getClass()) return false;
         OxygenLevel that = (OxygenLevel) o;
         return id == that.id &&
-                Float.compare(that.time, time) == 0 &&
-                Float.compare(that.value, value) == 0 &&
-                run_id == that.run_id;
+                run_id == that.run_id &&
+                Objects.equals(time, that.time) &&
+                Objects.equals(value, that.value);
     }
 
     @Override

@@ -17,16 +17,19 @@ public class Controller {
     private final CaloriesDAO caloriesDAO;
     private final DistancesDAO distancesDAO;
     private final HeartRatesDAO heartRatesDAO;
+    private final TemperaturesDAO temperaturesDAO;
 
     //initialisation des DAO
-    public Controller(UsersDAO usersDAO, RunsDAO runsDAO, OxygenLevelsDAO oxygenLevelsDAO, SpeedsDAO speedsDAO, CaloriesDAO caloriesDAO, DistancesDAO distancesDAO, HeartRatesDAO heartRatesDAO) {
+
+    public Controller(UsersDAO usersDAO, RunsDAO runsDAO, OxygenLevelsDAO oxygenLevelsDAO, SpeedsDAO speedsDAO, CaloriesDAO caloriesDAO, DistancesDAO distancesDAO, HeartRatesDAO heartRatesDAO, TemperaturesDAO temperaturesDAO) {
         this.usersDAO = usersDAO;
-        this.runsDAO=runsDAO;
-        this.oxygenLevelsDAO=oxygenLevelsDAO;
-        this.speedsDAO=speedsDAO;
-        this.caloriesDAO=caloriesDAO;
-        this.distancesDAO=distancesDAO;
-        this.heartRatesDAO=heartRatesDAO;
+        this.runsDAO = runsDAO;
+        this.oxygenLevelsDAO = oxygenLevelsDAO;
+        this.speedsDAO = speedsDAO;
+        this.caloriesDAO = caloriesDAO;
+        this.distancesDAO = distancesDAO;
+        this.heartRatesDAO = heartRatesDAO;
+        this.temperaturesDAO = temperaturesDAO;
     }
 
     @RequestMapping("/")
@@ -59,5 +62,7 @@ public class Controller {
     @GetMapping(value="/heartRates/ {id}")
     public String getHeartRates(@PathVariable long id){ return heartRatesDAO.findById(id).toString();}
 
+    @GetMapping(value="/temperatures/ {id}")
+    public String getTemperatures(@PathVariable long id){ return temperaturesDAO.findById(id).toString();}
 
 }

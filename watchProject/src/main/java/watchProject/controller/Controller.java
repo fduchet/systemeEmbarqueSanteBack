@@ -2,6 +2,7 @@ package watchProject.controller;
 
 import org.springframework.web.bind.annotation.*;
 import watchProject.DAO.OxygenLevelsDAO;
+import watchProject.DAO.SpeedsDAO;
 import watchProject.DAO.UsersDAO;
 import watchProject.DAO.RunsDAO;
 
@@ -14,12 +15,14 @@ public class Controller {
     private final UsersDAO usersDAO;
     private final RunsDAO runsDAO;
     private final OxygenLevelsDAO oxygenLevelsDAO;
+    private final SpeedsDAO speedsDAO;
 
     //initialisation des DAO
-    public Controller(UsersDAO usersDAO, RunsDAO runsDAO, OxygenLevelsDAO oxygenLevelsDAO) {
+    public Controller(UsersDAO usersDAO, RunsDAO runsDAO, OxygenLevelsDAO oxygenLevelsDAO, SpeedsDAO speedsDAO) {
         this.usersDAO = usersDAO;
         this.runsDAO=runsDAO;
         this.oxygenLevelsDAO=oxygenLevelsDAO;
+        this.speedsDAO=speedsDAO;
 
     }
 
@@ -40,4 +43,9 @@ public class Controller {
 
     @GetMapping(value="/oxygenLevels/ {id}")
     public String getOxygenLevels(@PathVariable long id){ return oxygenLevelsDAO.findById(id).toString();}
+
+    @GetMapping(value="/speeds/ {id}")
+    public String getSpeeds(@PathVariable long id){ return speedsDAO.findById(id).toString();}
+
+
 }

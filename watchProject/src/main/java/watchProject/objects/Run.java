@@ -3,10 +3,12 @@ package watchProject.objects;
 import org.hibernate.annotations.JoinColumnOrFormula;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import java.util.Objects;
 
+@Entity(name="runs")
 public class Run {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

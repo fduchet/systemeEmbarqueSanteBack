@@ -1,10 +1,12 @@
 package watchProject.objects;
 
+import org.hibernate.annotations.JoinColumnOrFormula;
+
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity(name="oxygenLevels")
-public class OxygenLevel {
+@Entity(name="speeds")
+public class Speed {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private long id;
@@ -15,13 +17,13 @@ public class OxygenLevel {
     @Column(name="run_id")
     private long run_id;
 
-    public OxygenLevel(float time, float value, long run_id) {
+    public Speed(float time, float value, long run_id) {
         this.time = time;
         this.value = value;
         this.run_id = run_id;
     }
 
-    public OxygenLevel(){
+    public Speed(){
 
     }
 
@@ -59,7 +61,7 @@ public class OxygenLevel {
 
     @Override
     public String toString() {
-        return "OxygenLevel{" +
+        return "Speed{" +
                 "id=" + id +
                 ", time=" + time +
                 ", value=" + value +
@@ -71,11 +73,11 @@ public class OxygenLevel {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OxygenLevel that = (OxygenLevel) o;
-        return id == that.id &&
-                Float.compare(that.time, time) == 0 &&
-                Float.compare(that.value, value) == 0 &&
-                run_id == that.run_id;
+        Speed speed = (Speed) o;
+        return id == speed.id &&
+                Float.compare(speed.time, time) == 0 &&
+                Float.compare(speed.value, value) == 0 &&
+                run_id == speed.run_id;
     }
 
     @Override

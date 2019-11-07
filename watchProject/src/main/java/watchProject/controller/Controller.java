@@ -38,49 +38,49 @@ public class Controller {
     public Iterable<User> getAllUsers(){ return usersDAO.findAll();}
 
     @GetMapping(value="/users/{id}")
-    public String getUsers(@PathVariable long id){
-        return usersDAO.findById(id).toString();
+    public User getUsers(@PathVariable long id){
+        return usersDAO.findById(id).get();
     }
 
     @GetMapping(value="/runs")
     public Iterable<Run> getAllRuns(){ return runsDAO.findAll();}
 
     @GetMapping(value="/runs/{id}")
-    public String getRuns(@PathVariable long id){ return runsDAO.findById(id).toString(); }
+    public Run getRuns(@PathVariable long id){ return runsDAO.findById(id).get(); }
 
     @GetMapping(value="/oxygenLevels")
     public Iterable<OxygenLevel> getAllOxygenLevels(){ return oxygenLevelsDAO.findAll();}
 
     @GetMapping(value="/oxygenLevels/ {id}")
-    public String getOxygenLevels(@PathVariable long id){ return oxygenLevelsDAO.findById(id).toString();}
+    public OxygenLevel getOxygenLevels(@PathVariable long id){ return oxygenLevelsDAO.findById(id).get();}
 
     @GetMapping(value="/speeds")
     public Iterable<Speed> getAllSpeeds(){ return speedsDAO.findAll();}
 
     @GetMapping(value="/speeds/ {id}")
-    public String getSpeeds(@PathVariable long id){ return speedsDAO.findById(id).toString();}
+    public Speed getSpeeds(@PathVariable long id){ return speedsDAO.findById(id).get();}
 
     @GetMapping(value="/calories")
     public Iterable<Calorie> getAllCalories(){ return caloriesDAO.findAll();}
 
     @GetMapping(value="/calories/ {id}")
-    public String getCalories(@PathVariable long id){ return caloriesDAO.findById(id).toString();}
+    public Calorie getCalories(@PathVariable long id){ return caloriesDAO.findById(id).get();}
 
     @GetMapping(value="/distances")
     public Iterable<Distance> getAllDistances(){ return distancesDAO.findAll();}
 
     @GetMapping(value="/distances/ {id}")
-    public String getDistances(@PathVariable long id){ return distancesDAO.findById(id).toString();}
+    public Distance getDistances(@PathVariable long id){ return distancesDAO.findById(id).get();}
 
     @GetMapping(value="/heartRates")
     public Iterable<HeartRate> getAllHeartRates(){ return heartRatesDAO.findAll();}
 
     @GetMapping(value="/heartRates/ {id}")
-    public String getHeartRates(@PathVariable long id){ return heartRatesDAO.findById(id).toString();}
+    public HeartRate getHeartRates(@PathVariable long id){ return heartRatesDAO.findById(id).get();}
 
     @GetMapping(value="/temperatures")
     public Iterable<Temperature> getAllTemperatures(){ return temperaturesDAO.findAll();}
 
     @GetMapping(value="/temperatures/ {id}")
-    public String getTemperatures(@PathVariable long id){ return temperaturesDAO.findById(id).toString();}
+    public Temperature getTemperatures(@PathVariable long id){ return temperaturesDAO.findById(id).get();}
 }

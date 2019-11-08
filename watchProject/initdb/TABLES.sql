@@ -1,11 +1,12 @@
-drop table users;
-drop table runs;
 drop table calories;
 drop table temperatures;
 drop table heart_rates;
 drop table oxygen_levels;
 drop table speeds;
 drop table distances;
+drop table runs;
+drop table users;
+
 
 create table users
 (

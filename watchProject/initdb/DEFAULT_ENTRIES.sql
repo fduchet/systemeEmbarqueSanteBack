@@ -1,9 +1,11 @@
 insert into defaultdb.users(first_name, last_name, weight, height, email_address, age) values ('Sébastien','Comte',72,178,'sc@orange.fr',22);
 insert into defaultdb.users(first_name, last_name, weight, height, email_address, age) values ('Marg','Buisson',65,175,'mb@yo.fr',22);
 insert into defaultdb.users(first_name, last_name, weight, height, email_address, age) values ('Nicolas','Vauvillier',78,180,'nv@bdh.fr',22);
-insert into defaultdb.users(first_name, last_name, weight, height, email_address, age) values ('FerDwhich','DS', 88, 182,'fds@helon.fr', 23);
+insert into defaultdb.users(first_name, last_name, weight, height, email_address, age) values ('FerDwich','DS', 88, 182,'fds@helon.fr', 23);
 
 insert into defaultdb.runs(total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id) values (15,60,15.3,130,96,'Course le long de la Seine avec beaucoup de vent', 1);
+insert into defaultdb.runs(total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id) values (13,70,14,120,95,'Course le long de la Seine avec beaucoup de vent', 1);
+insert into defaultdb.runs(total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id) values (16,80,16,140,97,'Course le long de la Seine avec beaucoup de vent', 1);
 
 insert into defaultdb.calories(time, value, run_id) VALUES (0,0,1);
 insert into defaultdb.calories(time, value, run_id) VALUES (0.25,4,1);

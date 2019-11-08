@@ -30,7 +30,7 @@ public class HeartRateController {
     @GetMapping(value="/ {id}")
     public HeartRate getHeartRates(@PathVariable long id){ return heartRatesDAO.findById(id).get();}
 
-    @GetMapping(value="/calories/runs/{run_id}")
+    @GetMapping(value="/heartRates/runs/{run_id}")
     public Iterable<HeartRate> getUserRuns(@PathVariable long run_id){
         List<HeartRate> heartRateList = new ArrayList<>();
         Iterator<HeartRate> allheartRates = heartRatesDAO.findAll().iterator();

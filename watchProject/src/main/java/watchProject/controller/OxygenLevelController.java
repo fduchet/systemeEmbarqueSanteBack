@@ -31,7 +31,7 @@ public class OxygenLevelController {
     @GetMapping(value="/ {id}")
     public OxygenLevel getOxygenLevels(@PathVariable long id){ return oxygenLevelsDAO.findById(id).get();}
 
-    @GetMapping(value="/calories/runs/{run_id}")
+    @GetMapping(value="/oxygenLevels/runs/{run_id}")
     public Iterable<OxygenLevel> getUserRuns(@PathVariable long run_id){
         List<OxygenLevel> oxygenLevelList = new ArrayList<>();
         Iterator<OxygenLevel> allOxygenLevels = oxygenLevelsDAO.findAll().iterator();

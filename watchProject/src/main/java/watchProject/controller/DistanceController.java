@@ -30,7 +30,7 @@ public class DistanceController {
     @GetMapping(value="/ {id}")
     public Distance getDistances(@PathVariable long id){ return distancesDAO.findById(id).get();}
 
-    @GetMapping(value="/distances/runs/{run_id}")
+    @GetMapping(value="/runs/{run_id}")
     public Iterable<Distance> getUserRuns(@PathVariable long run_id){
         List<Distance> distancesList = new ArrayList<>();
         Iterator<Distance> allDistances = distancesDAO.findAll().iterator();

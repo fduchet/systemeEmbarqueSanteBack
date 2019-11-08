@@ -32,7 +32,7 @@ public class TemperatureController {
     @GetMapping(value="/ {id}")
     public Temperature getTemperatures(@PathVariable long id){ return temperaturesDAO.findById(id).get();}
 
-    @GetMapping(value="/temperatures/runs/{run_id}")
+    @GetMapping(value="/runs/{run_id}")
     public Iterable<Temperature> getUserRuns(@PathVariable long run_id){
         List<Temperature> temperatureList = new ArrayList<>();
         Iterator<Temperature> allTemperature = temperaturesDAO.findAll().iterator();

@@ -30,7 +30,7 @@ public class RunController {
     @GetMapping(value="/{id}")
     public Run getRuns(@PathVariable long id){ return runsDAO.findById(id).get(); }
 
-    @GetMapping(value="/runs/users/{user_id}")
+    @GetMapping(value="/users/{user_id}")
     public Iterable<Run> getUserRuns(@PathVariable long user_id){
         List<Run> runList = new ArrayList<>();
         Iterator<Run> allRuns = runsDAO.findAll().iterator();

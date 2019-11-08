@@ -31,7 +31,7 @@ public class SpeedController {
     @GetMapping(value="/ {id}")
     public Speed getSpeeds(@PathVariable long id){ return speedsDAO.findById(id).get();}
 
-    @GetMapping(value="/speeds/runs/{run_id}")
+    @GetMapping(value="/runs/{run_id}")
     public Iterable<Speed> getUserSpeeds(@PathVariable long run_id){
         List<Speed> speedList = new ArrayList<>();
         Iterator<Speed> allSpeeds = speedsDAO.findAll().iterator();

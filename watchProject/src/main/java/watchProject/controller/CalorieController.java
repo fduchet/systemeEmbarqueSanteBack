@@ -28,7 +28,7 @@ public class CalorieController {
     @GetMapping(value="/ {id}")
     public Calorie getCalories(@PathVariable long id){ return caloriesDAO.findById(id).get();}
 
-    @GetMapping(value="/calories/runs/{run_id}")
+    @GetMapping(value="/runs/{run_id}")
     public Iterable<Calorie> getUserRuns(@PathVariable long run_id){
         List<Calorie> calorieList = new ArrayList<>();
         Iterator<Calorie> allCalories = caloriesDAO.findAll().iterator();

@@ -6,15 +6,15 @@ import java.util.Objects;
 @Entity(name="distances")
 public class Distance {
 
-            @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Id
-        private long id;
-        @Column(name="time")
-        private String time;
-        @Column(name = "value")
-        private String value;
-        @Column(name="run_id")
-        private long run_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private long id;
+    @Column(name="time")
+    private String time;
+    @Column(name = "value")
+    private String value;
+    @Column(name="run_id")
+    private long run_id;
 
     public Distance(String time, String value, long run_id) {
         this.time = time;

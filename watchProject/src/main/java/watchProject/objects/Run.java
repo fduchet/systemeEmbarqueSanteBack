@@ -2,15 +2,13 @@ package watchProject.objects;
 
 import org.hibernate.annotations.JoinColumnOrFormula;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity(name="runs")
 public class Run {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private long id;
     @Column(name = "total_distance")
     private String total_distance;
@@ -21,13 +19,13 @@ public class Run {
     @Column(name="average_heart_rate")
     private String  average_heart_rate;
     @Column(name="average_oxygen_level")
-    private String  average_oxygen_level;
+    private int  average_oxygen_level;
     @Column(name="description")
     private String description;
     @Column(name="user_id")
     private long user_id;
 
-    public Run(String total_distance, String total_time, String average_speed, String average_heart_rate, String average_oxygen_level, String description, long user_id) {
+    public Run(String total_distance, String total_time, String average_speed, String average_heart_rate, int average_oxygen_level, String description, long user_id) {
         this.total_distance = total_distance;
         this.total_time = total_time;
         this.average_speed = average_speed;
@@ -81,11 +79,11 @@ public class Run {
         this.average_heart_rate = average_heart_rate;
     }
 
-    public String getAverage_oxygen_level() {
+    public int getAverage_oxygen_level() {
         return average_oxygen_level;
     }
 
-    public void setAverage_oxygen_level(String average_oxygen_level) {
+    public void setAverage_oxygen_level(int average_oxygen_level) {
         this.average_oxygen_level = average_oxygen_level;
     }
 

@@ -8,6 +8,7 @@ drop table distances;
 drop table runs;
 drop table users;
 
+# docker run --name mariadb --rm -e MYSQL_ROOT_PASSWORD=toor -e MYSQL_DATABASE=defaultdb -p 3306:3306 -v "`pwd`/initdb: /docker-entrypoint-initdb.d" mariadb
 
 create table users
 (

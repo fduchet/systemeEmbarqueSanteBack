@@ -3,9 +3,9 @@ insert into defaultdb.users(first_name, last_name, weight, height, email_address
 insert into defaultdb.users(first_name, last_name, weight, height, email_address, age) values ('Nicolas','Vauvillier',78,180,'nv@bdh.fr',22);
 insert into defaultdb.users(first_name, last_name, weight, height, email_address, age) values ('FerDwich','DS', 88, 182,'fds@helon.fr', 23);
 
-insert into defaultdb.runs(total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id) values (15,60,15.3,130,96,'Course le long de la Seine avec beaucoup de vent', 1);
-insert into defaultdb.runs(total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id) values (13,70,14,120,95,'Course le long de la Seine avec beaucoup de vent', 1);
-insert into defaultdb.runs(total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id) values (16,80,16,140,97,'Course le long de la Seine avec beaucoup de vent', 1);
+insert into defaultdb.runs(date, total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id) values ('15/02/2019', 15,60,15.3,130,96,'Course le long de la Seine avec beaucoup de vent', 1);
+insert into defaultdb.runs(date, total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id) values ('21/02/2019',13,70,14,120,95,'Footing Bois de Boulogne', 1);
+insert into defaultdb.runs(date, total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id) values ('27/02/2019', 16,80,16,140,97,'Vraie performance au stade de la Plaine', 1);
 
 insert into defaultdb.calories(time, value, run_id) VALUES (0,0,1);
 insert into defaultdb.calories(time, value, run_id) VALUES (0.25,4,1);

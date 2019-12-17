@@ -25,6 +25,7 @@ create table runs
 (
     id  bigint auto_increment
         primary key,
+    date       text       null,
     total_distance       text       null,
     total_time         text       null,
     average_speed   text       null,
@@ -86,6 +87,16 @@ create table heart_rates
     constraint heart_rates_run_fk foreign key(run_id) references runs(id)
 );
 
+create table outside_temperatures
+(
+    id   bigint auto_increment
+        primary key,
+    time text null ,
+    value text null ,
+    run_id bigint,
+    constraint outside_temperatures_run_fk foreign key(run_id) references runs(id)
+);
+
 create table body_temperatures
 (
     id   bigint auto_increment
@@ -94,16 +105,6 @@ create table body_temperatures
     value text null ,
     run_id bigint,
     constraint body_temperatures_run_fk foreign key(run_id) references runs(id)
-);
-
-create table outside_temperatures
-(
-    id bigint auto_increment
-        primary key,
-    time text null,
-    value text null,
-    run_id bigint,
-    constraint outside_temperatures_run_fk foreign key(run_id) references runs(id)
 );
 
 

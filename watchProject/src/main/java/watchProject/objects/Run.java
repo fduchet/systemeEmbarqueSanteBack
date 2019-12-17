@@ -1,7 +1,5 @@
 package watchProject.objects;
 
-import org.hibernate.annotations.JoinColumnOrFormula;
-
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -10,6 +8,8 @@ public class Run {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private long id;
+    @Column (name="date")
+    private String date;
     @Column(name = "total_distance")
     private String total_distance;
     @Column(name = "total_time")
@@ -25,7 +25,8 @@ public class Run {
     @Column(name="user_id")
     private long user_id;
 
-    public Run(String total_distance, String total_time, String average_speed, String average_heart_rate, int average_oxygen_level, String description, long user_id) {
+    public Run(String date, String total_distance, String total_time, String average_speed, String average_heart_rate, int average_oxygen_level, String description, long user_id) {
+        this.date = date;
         this.total_distance = total_distance;
         this.total_time = total_time;
         this.average_speed = average_speed;
@@ -45,6 +46,14 @@ public class Run {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getTotal_distance() {
@@ -104,36 +113,23 @@ public class Run {
     }
 
     @Override
-    public String toString() {
-        return "Run{" +
-                "id=" + id +
-                ", total_distance='" + total_distance + '\'' +
-                ", total_time='" + total_time + '\'' +
-                ", average_speed='" + average_speed + '\'' +
-                ", average_heart_rate='" + average_heart_rate + '\'' +
-                ", average_oxygen_level='" + average_oxygen_level + '\'' +
-                ", description='" + description + '\'' +
-                ", user_id=" + user_id +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Run run = (Run) o;
         return id == run.id &&
+                average_oxygen_level == run.average_oxygen_level &&
                 user_id == run.user_id &&
+                Objects.equals(date, run.date) &&
                 Objects.equals(total_distance, run.total_distance) &&
                 Objects.equals(total_time, run.total_time) &&
                 Objects.equals(average_speed, run.average_speed) &&
                 Objects.equals(average_heart_rate, run.average_heart_rate) &&
-                Objects.equals(average_oxygen_level, run.average_oxygen_level) &&
                 Objects.equals(description, run.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id);
+        return Objects.hash(id, date, total_distance, total_time, average_speed, average_heart_rate, average_oxygen_level, description, user_id);
     }
 }

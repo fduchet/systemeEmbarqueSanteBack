@@ -1,5 +1,6 @@
 drop table calories;
-drop table temperatures;
+drop table outside_temperatures;
+drop table body_temperatures;
 drop table heart_rates;
 drop table oxygen_levels;
 drop table speeds;
@@ -85,14 +86,24 @@ create table heart_rates
     constraint heart_rates_run_fk foreign key(run_id) references runs(id)
 );
 
-create table temperatures
+create table body_temperatures
 (
     id   bigint auto_increment
         primary key,
     time text null ,
     value text null ,
     run_id bigint,
-    constraint temperatures_run_fk foreign key(run_id) references runs(id)
+    constraint body_temperatures_run_fk foreign key(run_id) references runs(id)
+);
+
+create table outside_temperatures
+(
+    id bigint auto_increment
+        primary key,
+    time text null,
+    value text null,
+    run_id bigint,
+    constraint outside_temperatures_run_fk foreign key(run_id) references runs(id)
 );
 
 
